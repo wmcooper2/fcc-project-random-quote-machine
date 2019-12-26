@@ -1,0 +1,56 @@
+* {
+  font-family: "Comic Sans MS", "Comic Sans", "cursive";
+  /*
+  border: 1px solid black;
+  border-radius: 3px;
+  */
+  margin: 2px;
+  padding: 2px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#quotes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90%;
+}
+
+#mainarea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+}
+
+#thequote {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 80%;
+  height: 60%;
+  padding: 20px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: blue;
+}
+
+button {
+  font-size: 30px;
+}
+
+h1,
+h6 {
+  text-align: center;
+}
