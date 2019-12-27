@@ -3,51 +3,65 @@ import quotes from "./quotedata.js";
 import { FaTwitter } from "react-icons/fa";
 import "./App.css";
 
-const author = "#default";
-const items = Object.entries(quotes);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quote: "Click for words of wisdom",
+      author: "",
+      allQuotes: Object.entries(quotes),
+      color: "rbg(89, 160, 236)"
+    };
+    this.changeQuote = this.changeQuote.bind(this);
+    this.tweetQuote = this.tweetQuote.bind(this);
+  }
 
-let currentQuote = "Click for words of wisdom.";
+  changeQuote = () => {
+    let items = this.state.allQuotes;
+    let choice = items[Math.round(items.length * Math.random())];
+    // console.log(choice[0]);
+    let newQuote = choice[0];
+    let newAuthor = choice[1];
+    this.setState({
+      quote: newQuote,
+      author: newAuthor
+    });
+  };
 
-const updateQuote2 = () => {};
+  tweetQuote = () => {
+    let url = "https://twitter.com/intent/tweet?text=";
+    window.open(url + this.state.quote + "(" + this.state.author + ")");
+  };
 
-// function updateQuote(newQuote) {
-// document.getElementById("thequote").innerHTML =
-// newQuote[0] + "<br /> <br /> -- " + newQuote[1];
-// }
+  render() {
+    return (
+      <React.Fragment>
+        <header>
+          <h1>Q is for quote.</h1>
+        </header>
 
-const changeQuote = () => {
-  currentQuote = items[Math.round(items.length * Math.random())];
-};
-
-// document.getElementById("quotes").onclick = function randomQuote(obj) {
-// let choice = items[Math.round(items.length * Math.random())];
-// updateQuote(choice);
-// };
-
-// document.getElementById("twitbtn").onclick = function tweet() {
-// let url = "https://twitter.com/intent/tweet?text=";
-// let tweetThis = document.getElementById("thequote").innerText;
-// window.open(url + tweetThis);
-// };
-
-function App() {
-  return (
-    <React.Fragment>
-      <header>
-        <h1>Q is for quote.</h1>
-      </header>
-
-      <div id="mainarea">
-        <div onClick={changeQuote} id="thequote">
-          {currentQuote}
+        <div id="mainarea">
+          <div onClick={this.changeQuote} id="thequote">
+            {this.state.quote}
+            <br />
+            <br />
+            {this.state.author}
+          </div>
+          <a>
+            <FaTwitter
+              size={42}
+              style={{ color: this.state.color }}
+              onClick={this.tweetQuote}
+            />
+          </a>
         </div>
-        <FaTwitter size={42} style={{ color: "rbga(89, 160, 236, 1.0)" }} />
-      </div>
-      <footer>
-        <h6>These words of wisdom are brought to you by the letter Q.</h6>
-      </footer>
-    </React.Fragment>
-  );
+        <footer>
+          <h6>Find a quote you like and tweet it.</h6>
+          <h6>These words of wisdom are brought to you by the letter Q.</h6>
+        </footer>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
