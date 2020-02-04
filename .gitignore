@@ -10,6 +10,7 @@
 
 # production
 /build
+/random-quote-machine
 
 # misc
 .DS_Store
