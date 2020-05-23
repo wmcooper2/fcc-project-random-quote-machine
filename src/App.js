@@ -48,13 +48,9 @@ class App extends React.Component {
             <br />
             {this.state.author}
           </div>
-          <a href="_blank">
-            <FaTwitter
-              size={42}
-              style={{ color: this.state.color }}
-              onClick={this.tweetQuote}
-            />
-          </a>
+          <button className="twitter" onClick={this.tweetQuote}>
+            <FaTwitter size={42} style={{ color: this.state.color }} />
+          </button>
         </div>
       </React.Fragment>
     );
