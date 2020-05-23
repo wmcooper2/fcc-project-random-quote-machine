@@ -7,7 +7,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quote: "Click for words of wisdom",
+      quote: (
+        <React.Fragment>
+          <p>Click for here words of wisdom</p>
+          <p>Tweet a quote that you like with the little birdy below.</p>
+        </React.Fragment>
+      ),
       author: "",
       allQuotes: Object.entries(quotes),
       color: "rbg(89, 160, 236)",
@@ -51,10 +56,6 @@ class App extends React.Component {
             />
           </a>
         </div>
-        <footer>
-          If you find a quote you like, you can tweet it. These words of wisdom
-          are brought to you by the letter Q
-        </footer>
       </React.Fragment>
     );
   }
