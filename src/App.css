@@ -1,11 +1,9 @@
 * {
   font-family: "Comic Sans MS", "Comic Sans", "cursive";
-  /*
-  border: 1px solid black;
-  border-radius: 3px;
-  */
-  margin: 2px;
-  padding: 2px;
+  font-size: 1rem;
+  margin: 1vw;
+  padding: 1vw;
+  text-align: center;
 }
 
 body {
@@ -13,18 +11,40 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: blue;
+  border-radius: 1vw;
+}
+
+a:hover {
+  box-shadow: 0 0 1vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-bottom: 0;
+}
+
 #quotes {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 90%;
+  height: 100%;
 }
 
 #mainarea {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  height: 70vh;
+  height: 50vh;
 }
 
 #thequote {
@@ -35,27 +55,5 @@ body {
   margin: auto;
   max-width: 80%;
   height: 60%;
-  padding: 20px;
-}
-
-a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: blue;
-  border-radius: 3px;
-}
-
-a:hover {
-  box-shadow: 3px 3px 3px 3px black;
-}
-
-button {
-  font-size: 30px;
-}
-
-h1,
-h6 {
-  text-align: center;
+  font-size: 1.5rem;
 }
