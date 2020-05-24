@@ -1,4 +1,4 @@
-# Random Quote Machine
+# [Random Quote Machine](https://wmcooper2.com/random-quote-machine)
 A random quote machine.
 
 ![Screenshot](screenshot.jpg)
